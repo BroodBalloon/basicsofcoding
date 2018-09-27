@@ -20,27 +20,30 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        EditText value1 = (EditText) this.findViewById(R.id.Number1);
-        String String1 =  value1.getText().toString();
-
-        EditText value2 = (EditText) this.findViewById(R.id.Number2);
-        String String2 =  value2.getText().toString();
-
-       final int number1 = Integer.parseInt(String1);
-       final int number2 = Integer.parseInt(String2);
-
-       final Calculator C = new Calculator();
 
 
 
+        final EditText value1 = this.findViewById(R.id.Number1);
+        final EditText value2 = this.findViewById(R.id.Number2);
 
         Button button = findViewById(R.id.Plus);
         final TextView textView = findViewById(R.id.textView);
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+                String String1 =  value1.getText().toString();
+
+
+                String String2 =  value2.getText().toString();
+
+                final int number1 = Integer.parseInt(String1);
+                final int number2 = Integer.parseInt(String2);
+
+                final Calculator C = new Calculator();
+
                 int result = C.Plus(number1, number2);
-                textView.setText(String.valueOf(result));;
+                textView.setText(String.valueOf(result));
             }
         });
     }
